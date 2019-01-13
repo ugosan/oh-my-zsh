@@ -19,16 +19,16 @@ fi
 
 # Check if we are on SSH or not
 if [[ -n "$SSH_CLIENT"  ||  -n "$SSH2_CLIENT" ]]; then
-  PR_HOST='%F{green}%m%f' # SSH
+  PR_HOST='%F{white}%m%f' # SSH
 else
-  PR_HOST='%F{green}%m%f' # no SSH
+  PR_HOST='%F{white}%m%f' # no SSH
 fi
 
 
-local return_code="%(?..%F{green}%? ↵%f)"
+local return_code="%(?..%F{white}%? ↵%f)"
 
-local user_host="${PR_USER}%F{cyan}@${PR_HOST}"
-local current_dir="%B%F{blue}%~%f%b"
+local user_host="${PR_USER}%F{red}@${PR_HOST}"
+local current_dir="%B%F{cyan}%~%f%b"
 local git_branch='$(git_prompt_info)'
 local virtualenv='${VIRTUAL_ENV}'
 
